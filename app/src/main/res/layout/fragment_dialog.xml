@@ -1,0 +1,47 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="UselessParent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:textSize="16sp"
+            android:text="Sort by"
+            android:id="@+id/sortByText"
+            android:layout_marginTop="10dp"
+            tools:ignore="HardcodedText" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hotIcon"
+            android:layout_below="@+id/sortByText"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="hotImage"
+            android:src="@mipmap/ic_hot"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/hotText"
+            android:text="Hot"
+            android:textSize="14sp"
+            android:layout_below="@+id/sortByText"
+            android:layout_marginTop="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/hotIcon"
+            tools:ignore="HardcodedText,RtlHardcoded" />
+
+        </RelativeLayout>
+</FrameLayout>
