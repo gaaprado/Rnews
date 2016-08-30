@@ -65,15 +65,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
                 if(position == 0){
                     ft.replace(R.id.content_main, new FragmentWeb(mData.get(position).getUrl()));
+                    ft.addToBackStack(null);
                     ft.commit();
 
                 }else{
-
-                Color color = new Color();
-                holder.linkUrl.setTextColor(color.parseColor("#0B0080"));
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(mData.get(position).getUrl()));
-                context.startActivity(i);
+                    Color color = new Color();
+                    holder.linkUrl.setTextColor(color.parseColor("#0B0080"));
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(mData.get(position).getUrl()));
+                    context.startActivity(i);
                 }
             }
         });

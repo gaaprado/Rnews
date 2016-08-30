@@ -2,7 +2,10 @@ package prado.com.Rnews.layout;
 import android.app.DialogFragment;
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import prado.com.Rnews.R;
 
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -38,8 +43,8 @@ public class MainActivity extends AppCompatActivity
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.content_main, new FragmentList());
+        ft.addToBackStack(null);
         ft.commit();
-
     }
 
     @Override
@@ -60,14 +65,14 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        if(id == R.id.menuSort){
-            showDialog();
-            return true;
+        switch(item.getItemId()){
+            case R.id.menuSort:
+                showDialog();
+                return true;
+            case R.id.home:
+                System.out.println("Help");
+                return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -85,7 +90,6 @@ public class MainActivity extends AppCompatActivity
         newFragment.show(ft, "dialog");
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
 
