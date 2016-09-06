@@ -4,7 +4,8 @@ import net.dean.jraw.RedditClient;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.support.constraint.BuildConfig;
+import android.support.design.BuildConfig;
+
 import net.dean.jraw.http.HttpRequest;
 import net.dean.jraw.http.NetworkException;
 import net.dean.jraw.http.RestResponse;
